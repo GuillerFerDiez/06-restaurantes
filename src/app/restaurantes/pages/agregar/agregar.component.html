@@ -1,1 +1,77 @@
-<p>agregar works!</p>
+<h1>
+    {{ (restaurante.id) ? 'Editar' : 'Nuevo' }}
+    Restaurante
+    <small>{{restaurante.nombre}}</small>
+</h1>
+
+<mat-divider class="mb-2"></mat-divider>
+
+<div class="grid">
+    <div class="col-12 sm:col-6">
+        <mat-card>
+            <mat-card-content>
+                <div class="grid">
+                    <mat-form-field class="col-12 sm:col-6">
+                        <mat-label>Restaurante</mat-label>
+                        <input matInput type="text" required [(ngModel)]="restaurante.nombre">
+                    </mat-form-field>
+                    <mat-form-field class="col-12 sm:col-6">
+                        <mat-label>Descripción</mat-label>
+                        <input matInput type="text" required [(ngModel)]="restaurante.descripcion">
+                    </mat-form-field>
+                    <mat-form-field class="col-12">
+                        <mat-label>Teléfono</mat-label>
+                        <input matInput type="text" required [(ngModel)]="restaurante.telefono">
+                    </mat-form-field>
+                    <mat-form-field class="col-12">
+                        <mat-label>Dirección</mat-label>
+                        <input matInput type="text" required [(ngModel)]="restaurante.direccion">
+                    </mat-form-field>
+                    <mat-form-field class="col-12">
+                        <mat-label>E-mail</mat-label>
+                        <input matInput type="text" required [(ngModel)]="restaurante.email">
+                    </mat-form-field>
+                    <mat-form-field class="col-12">
+                        <mat-label>Web</mat-label>
+                        <input matInput type="text" required [(ngModel)]="restaurante.web">
+                    </mat-form-field>
+                    <mat-form-field class="col-12">
+                        <mat-label>Capacidad</mat-label>
+                        <input matInput type="number" required [(ngModel)]="restaurante.capacidad">
+                    </mat-form-field>
+                    <mat-form-field class="col-12">
+                        <mat-label>Latitud</mat-label>
+                        <input matInput type="number" required [(ngModel)]="restaurante.lat">
+                    </mat-form-field>
+                    <mat-form-field class="col-12">
+                        <mat-label>Longitud</mat-label>
+                        <input matInput type="number" required [(ngModel)]="restaurante.lon">
+                    </mat-form-field>
+                    <mat-form-field class="col-12">
+                        <mat-label>URL</mat-label>
+                        <input matInput type="url" required [(ngModel)]="restaurante.url">
+                    </mat-form-field>
+                    <mat-form-field class="col-12">
+                        <mat-label>Foto Url</mat-label>
+                        <input matInput type="url" required [(ngModel)]="restaurante.alt_img">
+                    </mat-form-field>
+                </div>
+                <div class="flex justify-content-between">
+                    <button mat-raised-button color="primary" (click)="guardar()">
+                        <mat-icon>edit</mat-icon>
+                        {{ (restaurante.id) ? 'Actualizar' : 'Crear' }}
+                    </button>
+                    <button *ngIf="restaurante.id" mat-raised-button color="warn" (click)="borrarRestaurante()">
+                        <mat-icon>remove</mat-icon>
+                        Borrar
+                    </button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-12 sm:col-6">
+        <mat-card>
+            <img [src]="restaurante | imagen" mat-card-image>
+        </mat-card>
+    </div>
+</div>

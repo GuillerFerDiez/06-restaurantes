@@ -8,7 +8,13 @@ import { Restaurante } from '../interfaces/restaurantes.interfaces';
 export class ImagenPipe implements PipeTransform {
 
   transform(restaurante: Restaurante): string {
-    return 'assets/Fotos/' + restaurante.Imagen;
-  }
 
+    if (restaurante.alt_img) {
+      return restaurante.alt_img;
+    } else if (!restaurante.imagen) {
+      return 'assets/Fotos/noimages.jpg';
+    } else {
+      return 'assets/Fotos/' + restaurante.imagen;
+    }
+  }
 }

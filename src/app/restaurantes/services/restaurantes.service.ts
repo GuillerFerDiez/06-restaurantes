@@ -20,4 +20,19 @@ export class RestaurantesService {
     return this.http.get<Restaurante>(this.baseUrl + '/restaurantes/' + id);
   }
 
+  getSugerencias(termino: string): Observable<Restaurante[]> {
+    return this.http.get<Restaurante[]>(this.baseUrl + '/restaurantes?q=' + termino + '&_limit=5');
+  }
+
+  agregarRestaurante(restaurante: Restaurante): Observable<Restaurante> { //recibe un restaurante
+    return this.http.post<Restaurante>(this.baseUrl + '/restaurantes/', restaurante);
+  }
+
+  actualizarRestaurante(restaurante: Restaurante): Observable<Restaurante> { //recibe un restaurante
+    return this.http.post<Restaurante>(this.baseUrl + '/restaurantes/' + restaurante.id, restaurante);
+  }
+
+  borrarRestaurante(id: string): Observable<any> { //recibe un id, no devuelve nada
+    return this.http.delete<any>(this.baseUrl + '/restaurantes/' + id);
+  }
 }

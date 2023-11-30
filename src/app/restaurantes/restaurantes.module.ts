@@ -10,6 +10,7 @@ import { RestaurantesRoutingModule } from './restaurantes-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { RestauranteTarjetaComponent } from './component/restaurante-tarjeta/restaurante-tarjeta.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { ConfirmarComponent } from './component/confirmar/confirmar.component';
 
 
 
@@ -21,7 +22,8 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     HomeComponent,
     ListadoComponent,
     RestauranteTarjetaComponent,
-    ImagenPipe
+    ImagenPipe,
+    ConfirmarComponent
   ],
   imports: [
     CommonModule,

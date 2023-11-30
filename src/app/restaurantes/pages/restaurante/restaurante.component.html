@@ -9,27 +9,27 @@
 <div *ngIf="restaurante; else divLoading" class="grid p-2">
     <mat-card class="col-12 sm:col-6">
         <mat-card-header>
-            <mat-card-title>{{restaurante.Nombre}}</mat-card-title>
-            <mat-card-subtitle>{{restaurante.Direccion}}</mat-card-subtitle>
+            <mat-card-title>{{restaurante.nombre}}</mat-card-title>
+            <mat-card-subtitle>{{restaurante.direccion}}</mat-card-subtitle>
         </mat-card-header>
-        <img [src]="restaurante | imagen" [alt]="restaurante.Nombre" mat-card-image>
+        <img [src]="restaurante | imagen" [alt]="restaurante.nombre" mat-card-image>
     </mat-card>
     <mat-card class="col-12 sm:col-6">
         <mat-card-header>
             <mat-card-title>Información</mat-card-title>
-            <mat-card-subtitle>{{restaurante.Nombre}}</mat-card-subtitle>
+            <mat-card-subtitle>{{restaurante.nombre}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
             <mat-list>
-                <mat-list-item>{{restaurante.Descripcion}}</mat-list-item>
-                <mat-list-item>{{restaurante.Telefono}}</mat-list-item>
-                <mat-list-item>{{restaurante.Direccion}}</mat-list-item>
-                <mat-list-item>{{restaurante.Email}}</mat-list-item>
-                <mat-list-item>{{restaurante.WEB}}</mat-list-item>
-                <mat-list-item>{{restaurante.Capacidad}}</mat-list-item>
-                <mat-list-item>{{restaurante.Lat}}</mat-list-item>
-                <mat-list-item>{{restaurante.Lon}}</mat-list-item>
-                <mat-list-item>{{restaurante.Url}}</mat-list-item>
+                <mat-list-item>{{restaurante.descripcion}}</mat-list-item>
+                <mat-list-item>{{restaurante.telefono}}</mat-list-item>
+                <mat-list-item>{{restaurante.direccion}}</mat-list-item>
+                <mat-list-item>{{restaurante.email}}</mat-list-item>
+                <mat-list-item>{{restaurante.web}}</mat-list-item>
+                <mat-list-item>{{restaurante.capacidad}}</mat-list-item>
+                <mat-list-item>{{restaurante.lat}}</mat-list-item>
+                <mat-list-item>{{restaurante.lon}}</mat-list-item>
+                <mat-list-item>{{restaurante.url}}</mat-list-item>
             </mat-list>
             <button mat-button color="warn" (click)="regresar()">
                 Regresar
