@@ -29,7 +29,7 @@ export class RestaurantesService {
   }
 
   actualizarRestaurante(restaurante: Restaurante): Observable<Restaurante> { //recibe un restaurante
-    return this.http.post<Restaurante>(this.baseUrl + '/restaurantes/' + restaurante.id, restaurante);
+    return this.http.put<Restaurante>(this.baseUrl + '/restaurantes/' + restaurante.id, restaurante);
   }
 
   borrarRestaurante(id: string): Observable<any> { //recibe un id, no devuelve nada

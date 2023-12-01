@@ -57,6 +57,7 @@ export class AgregarComponent implements OnInit {
           console.log('Actualizando', restaurante);
           this.restaurante = restaurante;
           this.mostrarSnackBar('Registro actualizado');
+          this.router.navigate(['/restaurantes']);
         })
     } else {
       // Crearemos un nuevo registro
