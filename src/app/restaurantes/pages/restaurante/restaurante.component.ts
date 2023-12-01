@@ -21,7 +21,7 @@ export class RestauranteComponent implements OnInit {
     console.log(this.activatedRoute.snapshot.params['Id']);
     this.activatedRoute.params.pipe(
       delay(2000), switchMap(({ id }) => this.restaurantesService.getRestaurantesPorId(id)))
-      .subscribe(restaurante => restaurante = restaurante)
+      .subscribe(restaurante => this.restaurante = restaurante)
   }
 
   regresar() {
